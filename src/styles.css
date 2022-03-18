@@ -1,0 +1,37 @@
+/* You can add global styles to this file, and also import other style files */
+/*body {
+    font-family: 'Overpass', sans-serif;
+    font-weight: normal;
+    font-size: 100%;
+    color: #1b262c;
+    
+    margin: 0;
+    background-color: #0f4c75;
+}*/
+
+::-webkit-scrollbar {
+    width: 0.25rem;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0); 
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(104, 104, 104, 0); 
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0); 
+}
+
+html, body {
+    height: 100%;
+}
+
+body { 
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    /*background-color: #f8ffff;*/
+    background-color: #e1edee;
+}

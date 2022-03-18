@@ -1,0 +1,116 @@
+
+<div id="contenedor">
+    <div id="central">
+        <div id="login">
+
+            <div class="titulo">
+                Regístrate
+            </div>
+
+            <form id="loginform"  [formGroup]="userForm" (ngSubmit)="SignUp()">
+
+                <mat-form-field class="field" appearance="standard">
+                    <mat-label>Usuario</mat-label>
+                    <input 
+                    matInput
+                    placeholder="Nombre de Usuario"
+                    formControlName="username" required>
+                    <mat-error *ngIf="userForm.invalid">
+                        {{ getErrorGeneric('username') }}
+                    </mat-error>
+                    <!--<mat-hint>Min: 2, Max: 100</mat-hint>-->
+                </mat-form-field>
+
+                <mat-form-field class="field" appearance="standard">
+                    <mat-label>Nombres</mat-label>
+                    <input 
+                    matInput
+                    placeholder="Nombre:s"
+                    formControlName="nombre" required>
+                    <mat-error *ngIf="userForm.invalid">{{ getErrorGeneric('nombre') }}</mat-error>
+                    <!--<mat-hint>Min: 2, Max: 100</mat-hint>-->
+                </mat-form-field>
+
+                <mat-form-field class="field" appearance="standard">
+                    <mat-label>Apellido Paterno</mat-label>
+                    <input 
+                    matInput
+                    placeholder="Apellido Paterno"
+                    formControlName="ape_paterno" required>
+                    <mat-error *ngIf="userForm.invalid">{{ getErrorGeneric('ape_paterno') }}</mat-error>
+                    <!--<mat-hint>Min: 2, Max: 100</mat-hint>-->
+                </mat-form-field>
+
+                <mat-form-field class="field" appearance="standard">
+                    <mat-label>Apellido Materno</mat-label>
+                    <input 
+                    matInput
+                    placeholder="Apellido Materno"
+                    formControlName="ape_materno" required>
+                    <mat-error *ngIf="userForm.invalid">{{ getErrorGeneric('ape_materno') }}</mat-error>
+                    <!--<mat-hint>Min: 2, Max: 100</mat-hint>-->
+                </mat-form-field>
+
+                <mat-form-field class="field" appearance="standard">
+                    <mat-label>Teléfono</mat-label>
+                    <input 
+                    matInput
+                    placeholder="Teléfono"
+                    formControlName="telefono" required>
+                    <mat-error *ngIf="userForm.invalid">{{ getErrorPhone() }}</mat-error>
+                    <!--<mat-hint>Min: 6, Max: 12</mat-hint>-->
+                </mat-form-field>
+
+                <mat-form-field class="field" appearance="standard">
+                    <mat-label>Dirección</mat-label>
+                    <input 
+                    matInput
+                    placeholder="Dirección"
+                    formControlName="direccion" required>
+                    <mat-error *ngIf="userForm.invalid">{{ getErrorGeneric('direccion') }}</mat-error>
+                    <!--<mat-hint>Min: 2, Max: 100</mat-hint>-->
+                </mat-form-field>
+
+                <mat-form-field class="field" appearance="standard">
+                    <mat-label>Contraseña</mat-label>
+                    <input 
+                    matInput
+                    placeholder="Contraseña"
+                    formControlName="contraseña" 
+                    type="password" required>
+                    <mat-error *ngIf="userForm.invalid">{{ getErrorPassword() }}</mat-error>
+                    <!--<mat-hint>Min: 8, Max: 32</mat-hint>-->
+                </mat-form-field>
+
+                <div *ngIf="hasError; else load">
+
+                    <p class="error">{{ errMessage }}</p>
+
+                </div>
+
+                <ng-template #load>
+
+                    <div *ngIf="loader">
+
+                        <img
+                        width="64px"
+                        height="64px"
+                        class="load"
+                        src="../../assets/gif/goodloader.gif">    
+
+                    </div>
+
+                </ng-template>
+
+                <button mat-button color="primary"> Registrar </button>
+
+            </form>
+
+        </div>
+
+        <div class="inferior">
+            <a routerLink="/user-login">¿Ya tienes Cuenta?</a>
+        </div>
+
+    </div>
+</div>

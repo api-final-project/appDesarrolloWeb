@@ -1,0 +1,69 @@
+
+<div class="dashboard">
+
+    <div class="menu">
+
+        <div class="menu-ele home">
+            <a routerLink="/">
+                <img src="../../assets/svg/HomeHomeIcon.svg" alt="" srcset="">
+            </a>
+        </div>
+
+        <div class="menu-ele user">
+            <p>Hola, {{ user.Username }}</p>
+        </div>
+
+        <div class="menu-ele logout">
+            <button mat-button color="primary" (click)="Logout()">Salir</button>
+        </div>
+
+    </div>
+
+    <div class="user-table">
+
+        <table mat-table [dataSource]="dataSrc" class="mat-elevation-z8 table">
+
+            <ng-container matColumnDef="Usuario">
+                <th mat-header-cell *matHeaderCellDef> Usuario </th>
+                <td mat-cell *matCellDef="let element"> {{ element.Username }} </td>
+            </ng-container>
+    
+            <ng-container matColumnDef="Nombre">
+                <th mat-header-cell *matHeaderCellDef> Nombre </th>
+                <td mat-cell *matCellDef="let element"> {{ element.Nombre }} </td>
+            </ng-container>
+    
+            <ng-container matColumnDef="Apellido Paterno">
+                <th mat-header-cell *matHeaderCellDef> Apellido Paterno </th>
+                <td mat-cell *matCellDef="let element"> {{ element.Ape_paterno }} </td>
+            </ng-container>
+    
+            <ng-container matColumnDef="Apellido Materno">
+                <th mat-header-cell *matHeaderCellDef> Apellido Materno </th>
+                <td mat-cell *matCellDef="let element"> {{ element.Ape_materno }} </td>
+            </ng-container>
+    
+            <ng-container matColumnDef="Telefono">
+                <th mat-header-cell *matHeaderCellDef> Teléfono </th>
+                <td mat-cell *matCellDef="let element"> {{ element.Telefono }} </td>
+            </ng-container>
+    
+            <ng-container matColumnDef="Dirección">
+                <th mat-header-cell *matHeaderCellDef> Dirección </th>
+                <td mat-cell *matCellDef="let element"> {{ element.Direccion }} </td>
+            </ng-container>
+    
+            <tr mat-header-row *matHeaderRowDef="displayCols"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayCols;"></tr>
+    
+        </table>
+    
+        <mat-paginator class="mat-elevation-z8 table"
+                        [pageSizeOptions]="[5, 10, 20]"
+                        showFirstLastButtons 
+                        aria-label="Pagina de Usuario">
+        </mat-paginator>    
+
+    </div>
+
+</div>
